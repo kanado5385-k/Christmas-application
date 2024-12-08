@@ -2,6 +2,8 @@ package christmas.model;
 
 import java.util.Map;
 
+import christmas.enums.TypeOfMenu;
+
 public class Menu {
     private final Map<String,Integer> appetizer;
     private final Map<String,Integer> main;
@@ -32,6 +34,38 @@ public class Menu {
             "레드와인", 60000,
             "샴페인", 25000
         );
+    }
+
+    public TypeOfMenu checkTypeOfMenu(String menu) {
+        if (appetizer.containsKey(menu)) {
+            return TypeOfMenu.APPETIZER;
+        }
+        if (main.containsKey(menu)) {
+            return TypeOfMenu.MAIN;
+        }
+        if (dessert.containsKey(menu)) {
+            return TypeOfMenu.DESSERT;
+        }
+        if (drink.containsKey(menu)) {
+            return TypeOfMenu.DRINK;
+        }
+        return TypeOfMenu.NONE;
+    }
+
+    public Integer getPriceOfMenu(String menu) {
+        if (appetizer.containsKey(menu)) {
+            return appetizer.get(menu);
+        }
+        if (main.containsKey(menu)) {
+            return main.get(menu);
+        }
+        if (dessert.containsKey(menu)) {
+            return dessert.get(menu);
+        }
+        if (drink.containsKey(menu)) {
+            return drink.get(menu);
+        }
+        return null;
     }
 
 }

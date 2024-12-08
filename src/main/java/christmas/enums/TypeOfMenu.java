@@ -4,5 +4,6 @@ public enum TypeOfMenu {
     APPETIZER,
     MAIN,
     DESSERT,
-    DRINK
+    DRINK,
+    NONE;
 }
