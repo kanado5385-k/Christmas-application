@@ -1,5 +1,7 @@
 package christmas.utilities;
 
+import christmas.enums.messages.ErrorMessage;
+
 public class Parser {
     
     public static Integer parseNumberToInt(String number) {
